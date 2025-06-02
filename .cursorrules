@@ -1,0 +1,194 @@
+You are an expert iOS developer using Swift and SwiftUI. Follow these guidelines:
+
+  You are building an iOS app called HopeFlow to help users manage their anxiety related to AI.
+
+  # Rule References
+  - Refer to the files in /Users/Mounir/Desktop/HopeFlow App/ControlCenter for app information.
+  - beyong what's in the .cursorrules file, refer to Self_Improve.md, util.md, uiwork.md, ClineMemory.md, TaskManager.md and Test_Management.md for more rules and operational procedures. 
+  - YOU MUST ADHERE TO THE RULES AND PROCEDURES IN util.md, Self_Improve.md, ClineMemory.md, uiwork.md, TaskManager.md and Test_Management.md
+
+  # Mandatory Instructions
+  - Awlays add debug logs & comments in the code.
+  - always update the project strucuture in the .cursorrules file.
+  - follow all rules in /Users/Mounir/Desktop/HopeFlow App/Operations/Rules
+  - Apply Self_Improve.md for chnages to this .cursorrules file.
+  - Everytime you choose to apply a rule , explicitly state the rule in your output without abbreviations.
+
+
+ # Flow :
+  - refer to /Users/Mounir/Desktop/HopeFlow App/Operations/Rules/Flow.md for the flow of the app.
+
+
+  # Existing Project Structure
+  Project in /Users/Mounir/Desktop/HopeFlow App/HopeFlow App
+
+  .
+  └── HopeFlow App
+      ├── HopeFlow App
+      │   ├── Assets.xcassets
+      │   │   ├── AccentColor.colorset
+      │   │   │   └── Contents.json
+      │   │   ├── AppIcon.appiconset
+      │   │   │   └── Contents.json
+      │   │   └── Contents.json
+      │   ├── ContentView.swift
+      │   ├── HopeFlow_AppApp.swift
+      │   └── Preview Content
+      │       └── Preview Assets.xcassets
+      │           └── Contents.json
+      ├── HopeFlow App.xcodeproj
+      │   ├── project.pbxproj
+      │   ├── project.xcworkspace
+      │   │   ├── contents.xcworkspacedata
+      │   │   ├── xcshareddata
+      │   │   │   ├── IDEWorkspaceChecks.plist
+      │   │   │   └── swiftpm
+      │   │   │       └── configuration
+      │   │   └── xcuserdata
+      │   │       └── Mounir.xcuserdatad
+      │   │           └── UserInterfaceState.xcuserstate
+      │   └── xcuserdata
+      │       └── Mounir.xcuserdatad
+      │           └── xcschemes
+      │               └── xcschememanagement.plist
+      ├── HopeFlow AppTests
+      │   └── HopeFlow_AppTests.swift
+      ├── HopeFlow AppUITests
+      │   ├── HopeFlow_AppUITests.swift
+      │   └── HopeFlow_AppUITestsLaunchTests.swift
+      └── HopeFlow-App-Info.plist
+      
+# Swift specific rules
+
+  ## #1 - State Management
+
+    - Use appropriate property wrappers and macros:
+      - Annotate view models with `@observable`, e.g. `@observable final class MyModel`.
+      - Do not use `@State` in the SwiftUI View for view model observation. Instead, use `let model: MyModel`.
+      - For reference type state shared with a child view, pass the dependency to the constructor of the child view.
+      - For value type state shared with a child view, use SwiftUI bindings if and only if the child needs write access to the state.
+      - For value type state shared with a child view, pass the value if the child view only needs read access to the state.
+      - Use `@Environment` for state that should be shared throughout the entire app or large pieces of the app.
+      - Use `@State` only for local state that is managed by the view itself.
+
+
+  # Code Structure
+
+  - Use Swift's latest features and protocol-oriented programming
+  - Prefer value types (structs) over classes
+  - Use MVVM architecture with SwiftUI
+  - Structu re: Features/, Core/, UI/, Resources/
+  - Follow Apple's Human Interface Guidelines
+
+  
+  # Naming
+  - camelCase for vars/funcs, PascalCase for types
+  - Verbs for methods (fetchData)
+  - Boolean: use is/has/should prefixes
+  - Clear, descriptive names following Apple style
+
+
+  # Swift Best Practices
+
+  - Strong type system, proper optionals
+  - async/await for concurrency
+  - Result type for errors
+  - @Published, @StateObject for state
+  - Prefer let over var
+  - Protocol extensions for shared code
+
+
+  # UI Development
+
+  - SwiftUI first, UIKit when needed
+  - SF Symbols for icons
+  - Support dark mode, dynamic type
+  - SafeArea and GeometryReader for layout
+  - Handle all screen sizes and orientations
+  - Implement proper keyboard handling
+
+
+  # Performance
+
+  - Profile with Instruments
+  - Lazy load views and images
+  - Optimize network requests
+  - Background task handling
+  - Proper state management
+  - Memory management
+
+
+  # Data & State
+
+  - CoreData for complex models
+  - UserDefaults for preferences
+  - Combine for reactive code
+  - Clean data flow architecture
+  - Proper dependency injection
+  - Handle state restoration
+
+
+  # Security
+
+  - Encrypt sensitive data
+  - Use Keychain securely
+  - Certificate pinning
+  - Biometric auth when needed
+  - App Transport Security
+  - Input validation
+
+
+  # Testing & Quality
+
+  - XCTest for unit tests
+  - XCUITest for UI tests
+  - Test common user flows
+  - Performance testing
+  - Error scenarios
+  - Accessibility testing
+
+
+  # Essential Features
+
+  - Deep linking support
+  - Push notifications
+  - Background tasks
+  - Localization
+  - Error handling
+  - Analytics/logging
+
+
+  # Development Process
+
+  - Use SwiftUI previews
+  - Git branching strategy
+  - Code review process
+  - CI/CD pipeline
+  - Documentation
+  - Unit test coverage
+
+
+  # App Store Guidelines
+
+  - Privacy descriptions
+  - App capabilities
+  - In-app purchases
+  - Review guidelines
+  - App thinning
+  - Proper signing
+
+
+  Follow Apple's documentation for detailed implementation guidance.
+
+
+# SwiftUI rules : when best applicable, apply these rules.
+
+- Use structs for views and keep them small and focused
+- Use @State for simple view-local state
+- Use @ObservableObject with @Published for shared state
+- Use @Binding to pass mutable state to child views
+- Create custom ViewModifiers for reusable styling
+- Use environment objects for dependency injection
+- Use LazyVStack and LazyHStack for large collections
+- Extract complex view logic into separate components
+  
